@@ -1,18 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <button v-if="route.path !== '/'" @click="goBack">뒤로 가기</button>
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <router-view></router-view>
-  <button @click="goBack">뒤로 가기</button>
+
 </template>
 
-<script>
+<script setup>
+import { useRouter, useRoute } from 'vue-router';
 
-export default {
-  name: 'App',
-  methods: {
-    goBack() {
-      this.$router.go(-1)
-    }
-  }
+const router = useRouter();
+const route = useRoute();
+
+function goBack() {
+  router.go(-1);
 }
 </script>
 

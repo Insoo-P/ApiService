@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// 웹 크롤링
 export default {
   name: 'ApiService1'
 }

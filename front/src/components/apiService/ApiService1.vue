@@ -1,29 +1,35 @@
 <template>
-  <div>
-    <h2>Component 1</h2>
-    <p>This is content for Component 1.</p>
-    {{ message }}
-  </div>
+    <h2>사업자등록번호 조회</h2>
+    <form @submit.prevent="handleSubmit">
+      <label for="brno">사업자번호:</label>
+      <input id="brno" v-model="formData.brno" type="text" required>
+      <button type="submit">Submit</button>
+      <p>{{ resultBrno }}</p>
+    </form>
 </template>
 
-<script>
+<script setup>
 import axios from 'axios';
+import { ref } from 'vue'
 
-export default {
-  name: 'ApiService1',
-  data() {
-    return {
-      message: ''
-    }
-  },
-  created() {
-    axios.get('http://localhost:8081/api/hello')
+const resultBrno = ref('')
+const formData = ref({
+  brno: '',
+})
+
+const handleSubmit = () => {
+  console.log('Submitted Data:', formData.value);
+
+  const brno_arr = []
+  brno_arr.push(formData.value.brno)
+
+  axios.post('http://localhost:8081/api/brno/data', {'b_no':brno_arr})
       .then(response => {
-        this.message = response.data;
+        resultBrno.value = response.data.data[0].tax_type
       })
       .catch(error => {
         console.error(error);
       });
-  }
-}
+
+};
 </script>
