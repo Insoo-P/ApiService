@@ -7,7 +7,7 @@
         <td><router-link to="/apiService1">사업자등록번호</router-link></td>
       </tr>
       <tr>
-        <td><router-link to="/apiService2">2</router-link></td>
+        <td><router-link to="/apiService2">Excel -> json 파일 변환</router-link></td>
       </tr>
       <tr>
         <td><router-link to="/apiService3">3</router-link></td>
