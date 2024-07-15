@@ -10,7 +10,7 @@
         <td><router-link to="/apiService2">Excel -> json 파일 변환</router-link></td>
       </tr>
       <tr>
-        <td><router-link to="/apiService3">3</router-link></td>
+        <td><router-link to="/apiService3">kakaoMap API</router-link></td>
       </tr>
       <tr>
         <td><router-link to="/apiService4">4</router-link></td>
