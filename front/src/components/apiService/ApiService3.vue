@@ -1,8 +1,9 @@
 <template>
   <div>
     <h2>Component 3</h2>
-    <p>This is content for Component 1.</p>
-    <div id="map" style="width:100%;height:80vh;"></div>
+    <p>서울특별시 근처 병원 목록 조회</p>
+    <div id="map" style="width:100%;height:70vh;"></div>
+    <p>예시 ) 서울특별시만 검색</p>
     <input v-model="address" type="text">
     <button @click="test">검색</button>
   </div>

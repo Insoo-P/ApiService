@@ -24,6 +24,8 @@ dependencies {
 	implementation 'com.google.code.gson:gson:2.10.1'
 	implementation 'org.apache.poi:poi-ooxml:5.2.3'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+
+	implementation 'org.jsoup:jsoup:1.14.3' // 웹크롤링
 }
 
 tasks.named('test') {

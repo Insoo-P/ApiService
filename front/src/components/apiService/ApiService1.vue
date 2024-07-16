@@ -2,7 +2,7 @@
     <h2>사업자등록번호 조회</h2>
     <form @submit.prevent="handleSubmit">
       <label for="brno">사업자번호:</label>
-      <input id="brno" v-model="formData.brno" type="text" required>
+      <input id="brno" v-model="formData.brno" type="text" maxlength="10" required>
       <button type="submit">Submit</button>
       <p>{{ resultBrno }}</p>
     </form>
