@@ -18,6 +18,21 @@
       <tr>
         <td><router-link to="/apiService5">Calendar</router-link></td>
       </tr>
+      <tr>
+        <td><router-link to="/apiService6">3일 뒤 온도 조회</router-link></td>
+      </tr>
+      <tr>
+        <td><router-link to="/apiService7">Email 인증</router-link></td>
+      </tr>
+      <tr>
+        <td><router-link to="/apiService8">8</router-link></td>
+      </tr>
+      <tr>
+        <td><router-link to="/apiService9">9</router-link></td>
+      </tr>
+      <tr>
+        <td><router-link to="/apiService10">10</router-link></td>
+      </tr>
     </table>
   </div>
 </template>
