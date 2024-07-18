@@ -31,6 +31,12 @@ dependencies {
 	implementation 'javax.mail:javax.mail-api:1.6.2'
 	implementation 'com.sun.mail:smtp:1.6.2' // SMTP 프로토콜 지원 추가
 	implementation 'com.sun.activation:javax.activation:1.2.0' // Java Activation Framework 추가
+
+	// 웹소켓
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	// implementation 'javax.websocket:javax.websocket-api:1.1'
+	// implementation 'org.apache.tomcat.embed:tomcat-embed-core:9.0.41'
+	// implementation 'org.apache.tomcat.embed:tomcat-embed-websocket:9.0.41'
 }
 
 tasks.named('test') {

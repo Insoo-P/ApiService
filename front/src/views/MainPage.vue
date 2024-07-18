@@ -25,7 +25,7 @@
         <td><router-link to="/apiService7">Email 인증</router-link></td>
       </tr>
       <tr>
-        <td><router-link to="/apiService8">8</router-link></td>
+        <td><router-link to="/apiService8">WebSoket(채팅방)</router-link></td>
       </tr>
       <tr>
         <td><router-link to="/apiService9">9</router-link></td>
