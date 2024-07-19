@@ -28,7 +28,7 @@
         <td><router-link to="/apiService8">WebSoket(채팅방)</router-link></td>
       </tr>
       <tr>
-        <td><router-link to="/apiService9">9</router-link></td>
+        <td><router-link to="/apiService9">WebRTC(그림판)</router-link></td>
       </tr>
       <tr>
         <td><router-link to="/apiService10">10</router-link></td>

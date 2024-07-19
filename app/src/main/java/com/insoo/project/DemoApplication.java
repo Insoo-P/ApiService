@@ -23,5 +23,6 @@ public class DemoApplication implements WebSocketConfigurer {
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 		registry.addHandler(chatWebSocketHandler(), "/chat").setAllowedOrigins("*");
+		registry.addHandler(new WebRtcController(), "/drawing").setAllowedOrigins("*");
 	}
 }
