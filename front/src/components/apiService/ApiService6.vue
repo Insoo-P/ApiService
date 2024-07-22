@@ -15,8 +15,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import { ref, onMounted, inject } from 'vue';
+// import { axios } from 'axios'
+const axios = inject('axios');
 
 const countryList = ref([
   {title:'서울',regId:'11B10101'},
@@ -36,7 +37,6 @@ onMounted(() => {
 })
 
 function weatherBtn(regId){
-
   console.log(tmFc.value)
   axios.get(`https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=${serviceKey.value}&pageNo=${pageNo.value}&numOfRows=${numOfRows.value}&dataType=${dataType.value}&regId=${regId}&tmFc=${tmFc.value}`)
     .then(res => {

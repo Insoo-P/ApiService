@@ -17,7 +17,7 @@ const socket = ref(null)
 
 onMounted(() => {
 
-  socket.value = new WebSocket("ws://localhost:8081/chat");
+  socket.value = new WebSocket(`${process.env.VUE_APP_WS_URL}/chat`);
     // WebSocket이 연결되었을 때 호출되는 이벤트 핸들러
   socket.value.onopen = function(event) {
     console.log(event, "WebSocket 연결 성공!");

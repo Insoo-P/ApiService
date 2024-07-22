@@ -4,6 +4,7 @@
     <p>서울특별시 근처 병원 목록 조회</p>
     <div id="map" style="width:100%;height:70vh;"></div>
     <p>예시 ) 서울특별시만 검색</p>
+    <p>https://developers.kakao.com/console/app/824079/config/platform -> 안되면 여기서 사이트 도메인 확인</p>
     <input v-model="address" type="text">
     <button @click="test">검색</button>
   </div>
@@ -11,8 +12,8 @@
 
 <script setup>
 
+import axios from 'axios'
 import { ref, onMounted } from 'vue';
-import axios from 'axios';
 
 const kakaoMap2 = ref(null)
 const address= ref('')

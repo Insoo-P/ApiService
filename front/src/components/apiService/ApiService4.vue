@@ -22,8 +22,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import axios from 'axios';
+import { ref, inject} from 'vue';
+const axios = inject('axios');
 
 const validationUrl = ref('https://www.snu.ac.kr')
 const url = ref('https://www.snu.ac.kr/snunow/notice/genernal?sc=y')
@@ -81,7 +81,7 @@ async function verification(url){
 }
 
 function submitBtn(){
-  axios.post('http://localhost:8081/api/crawler', {'url': url.value})
+  axios.post('/api/crawler', {'url': url.value})
       .then(response => {
         responseDataList.value = response.data["제목"]
         console.log(response)

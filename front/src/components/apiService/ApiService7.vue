@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import axios from 'axios';
+import { ref, inject } from 'vue';
+const axios = inject('axios');
 
 const emailCode = ref('')
 const clientEmailCode = ref('')
@@ -22,8 +22,9 @@ const clientEmail = ref('')
 const smtpPassword= ref('')
 
 function sendEmailCode(){
-  axios.post('http://localhost:8081/api/email/sendEmailCode', {clientEmail : clientEmail.value, smtpPassword : smtpPassword.value})
+  axios.post('/api/email/sendEmailCode', {clientEmail : clientEmail.value, smtpPassword : smtpPassword.value})
     .then(res => {
+      alert('인증 번호를 이메일에 전달되었습니다.')
       console.log(res)
       console.log(res.data.emailCode)
       emailCode.value = res.data.emailCode

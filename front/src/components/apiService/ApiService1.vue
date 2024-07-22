@@ -9,9 +9,9 @@
 </template>
 
 <script setup>
-import axios from 'axios';
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 
+const axios = inject('axios');
 const resultBrno = ref('')
 const formData = ref({
   brno: '',
@@ -22,8 +22,8 @@ const handleSubmit = () => {
 
   const brno_arr = []
   brno_arr.push(formData.value.brno)
-
-  axios.post('http://localhost:8081/api/brno/data', {'b_no':brno_arr})
+  console.log('proxy.$axios',axios)
+  axios.post('/api/brno/data', {'b_no':brno_arr})
       .then(response => {
         resultBrno.value = response.data.data[0].tax_type
       })

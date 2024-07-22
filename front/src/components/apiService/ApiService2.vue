@@ -13,8 +13,9 @@
 
 <script setup>
 // 엑셀 파일 업로드 후 csv, json 파일로 변환
-import { ref } from 'vue';
-import axios from 'axios';
+import { ref, inject } from 'vue'
+
+const axios = inject('axios');
 
 const fileInput = ref(null);
 const file= ref(null)
@@ -38,7 +39,7 @@ const uploadFile = async () => {
   formData.append('file', file.value); // 'file'은 서버에서 해당 파일을 받을 때 사용할 키
 
   try {
-    const response = await axios.post('http://localhost:8081/api/excel/upload', formData, {
+    const response = await axios.post('/api/excel/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
